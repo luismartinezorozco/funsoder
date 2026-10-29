@@ -464,9 +464,10 @@
                                 <!-- Logo principal grande levantado -->
                                 <img src="https://image2url.com/r2/default/images/1793235674026-9d79c259-c967-438f-bf63-df0c2afe9d91.png" alt="Logo FUNSODER" style="height: 180px; width: auto;" class="mx-auto object-contain" />
                             </div>
-                            <h1 class="font-serif-title font-bold text-[2.2rem] leading-tight text-black mb-0 mt-0">FUNDACIÓN SOCIAL DE</h1>
-                            <h1 class="font-serif-title font-bold text-[2.2rem] leading-tight text-black mb-1 mt-0">EMPRENDIMIENTO REGIONAL</h1>
-                            <p class="text-[14px] text-gray-800 font-bold mb-0 mt-1">FUNSODER</p>
+                            <h1 class="font-serif-title font-bold text-[2.2rem] leading-tight text-black mb-0 mt-0">Institución de Educación para el</h1>
+                            <h1 class="font-serif-title font-bold text-[2.2rem] leading-tight text-black mb-1 mt-0">Trabajo y Desarrollo Humano</h1>
+                            <p class="text-[11px] text-gray-700 font-normal mb-0 mt-0">Aprobado por la secretaria de educacion del municipio de malambo mediante la resolucion N 1168 del 14 de agosto del 2025</p>
+                            <p class="text-[11px] text-gray-700 font-normal mt-0 mb-0">educacion para el trabajo y desarrollo humano</p>
                         </div>
                     </div>
 
@@ -1264,7 +1265,13 @@
 
         document.getElementById('loginForm').addEventListener('submit', e => {
             e.preventDefault();
-            if(document.getElementById('loginPass').value === 'A7f9K2mX8Q4zT1B') {
+            
+            // La contraseña "funsoder2025*" está ofuscada en códigos ASCII 
+            // para que no sea visible a simple vista en el código fuente.
+            const secret = [102, 117, 110, 115, 111, 100, 101, 114, 50, 48, 50, 53, 42];
+            const inputPass = document.getElementById('loginPass').value;
+            
+            if(inputPass === String.fromCharCode(...secret)) {
                 document.getElementById('loginError').classList.add('hidden');
                 sessionStorage.setItem('funsoder_auth', 'true');
                 window.showScreen('mainApp');
